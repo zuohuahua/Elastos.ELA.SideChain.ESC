@@ -623,7 +623,7 @@ var (
 	ListenPortFlag = cli.IntFlag{
 		Name:  "port",
 		Usage: "Network listening port",
-		Value: 20638,
+		Value: 20658,
 	}
 	BootnodesFlag = cli.StringFlag{
 		Name:  "bootnodes",
@@ -765,7 +765,7 @@ var (
 	BlackContractAddr = cli.StringFlag{
 		Name:  "black.contract.address",
 		Usage: "configue Black Contract address",
-		Value: "0xC445f9487bF570fF508eA9Ac320b59730e81e503",
+		Value: "",
 	}
 	PassBalance = cli.Int64Flag{
 		Name:  "pass.balance",
@@ -796,7 +796,7 @@ var (
 	PbftDposPort = cli.StringFlag{
 		Name:  "pbft.net.port",
 		Usage: "connect dpos direct net port",
-		Value: "20639",
+		Value: "20659",
 	}
 	PbftMinerAddress = cli.StringFlag{
 		Name:  "pbft.miner.address",
@@ -1610,39 +1610,36 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *eth.Config) {
 	switch {
 	case ctx.GlobalBool(TestnetFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 21
+			cfg.NetworkId = 20230426
 		}
 		cfg.Genesis = core.DefaultTestnetGenesisBlock()
-		cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
+		//cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
 		if !ctx.GlobalIsSet(DataDirFlag.Name) {
 			cfg.EvilSignersJournalDir = filepath.Join(node.DefaultDataDir(), "testnet", "geth")
 		}
 		if !ctx.GlobalIsSet(DynamicArbiter.Name) {
 			cfg.DynamicArbiterHeight = 1
 		}
-		if !ctx.GlobalIsSet(FrozenAccount.Name) {
-			ctx.GlobalSet(FrozenAccount.Name, "0x6527946c8b26cc203f9674a5e1d8178beeed70c1")
-		}
-		cfg.ArbiterListContract = "0xcEAA743AA3D1E771600e34c7F18c9e30AB63EEb2"
+		//cfg.ArbiterListContract = "0xcEAA743AA3D1E771600e34c7F18c9e30AB63EEb2"
 	case ctx.GlobalBool(RinkebyFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 22
+			cfg.NetworkId = 20230427
 		}
 		cfg.Genesis = core.DefaultRinkebyGenesisBlock()
-		cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
+		//cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
 		if !ctx.GlobalIsSet(DataDirFlag.Name) {
 			cfg.EvilSignersJournalDir = filepath.Join(node.DefaultDataDir(), "rinkeby", "geth")
 		}
 		if !ctx.GlobalIsSet(DynamicArbiter.Name) {
-			cfg.DynamicArbiterHeight = 2
+			cfg.DynamicArbiterHeight = 1
 		}
-		cfg.ArbiterListContract = "0xcEAA743AA3D1E771600e34c7F18c9e30AB63EEb2"
+		//cfg.ArbiterListContract = "0xcEAA743AA3D1E771600e34c7F18c9e30AB63EEb2"
 	case ctx.GlobalBool(GoerliFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 23
+			cfg.NetworkId = 20230428
 		}
 		cfg.Genesis = core.DefaultGoerliGenesisBlock()
-		cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
+		//cfg.BlackContractAddr = "0x491bC043672B9286fA02FA7e0d6A3E5A0384A31A"
 		if !ctx.GlobalIsSet(DataDirFlag.Name) {
 			cfg.EvilSignersJournalDir = filepath.Join(node.DefaultDataDir(), "goerli", "geth")
 		}
@@ -1676,8 +1673,6 @@ func SetEthConfig(ctx *cli.Context, stack *node.Node, cfg *eth.Config) {
 			cfg.Miner.GasPrice = big.NewInt(1)
 		}
 	default: //main net
-		ctx.GlobalSet(FrozenAccount.Name, "0x93c3A8051b8ba814eB5FB22d655681720E6a4d74")
-		ctx.GlobalSet(FrozenAccount.Name, "0x4a9a0cC103199F67730bdC61337d192788858874")
 		cfg.ArbiterListContract = "mainnet"
 	}
 	list := ctx.StringSlice(FrozenAccount.Name)
