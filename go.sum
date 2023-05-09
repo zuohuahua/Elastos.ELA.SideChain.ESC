@@ -219,8 +219,8 @@ github.com/elastic/gosigar v0.14.2 h1:Dg80n8cr90OZ7x+bAax/QjoW/XqTI11RmA79ZwIm9/
 github.com/elastic/gosigar v0.14.2/go.mod h1:iXRIGg2tLnu7LBdpqzyQfGDEidKCfWcCMS0WKyPWoMs=
 github.com/elastos/Elastos.ELA v0.9.0 h1:Q7U7X65ctqcC42vnic1JZ8JoNRo3L5FR4s5rnMS4Ivo=
 github.com/elastos/Elastos.ELA v0.9.0/go.mod h1:VOfNGMQQigLmMHe//CfVDkLZk+I9/Ww20zfIOMCmS5s=
-github.com/elastos/Elastos.ELA.SPV v0.1.0 h1:WSbjWBkO9fuTJAhzyktd5h2tsriDYNn84I5PF52mjx8=
-github.com/elastos/Elastos.ELA.SPV v0.1.0/go.mod h1:0Q/Wbb2l3uI+uoQ/N87wvDF3kbGPOHE1F4SpmgMxfv8=
+github.com/elastos/Elastos.ELA.SPV v0.1.1-0.20230508021646-47ddcf037c01 h1:8t69vH3CRP2yqoHBeO9Anli/LB2YGe5ACHKI78d0thg=
+github.com/elastos/Elastos.ELA.SPV v0.1.1-0.20230508021646-47ddcf037c01/go.mod h1:CC3PC7piZCw7MoC9RwLIoADSPMFhxAuEdun/Hi178Cs=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=
@@ -494,8 +494,6 @@ github.com/jwilder/encoding v0.0.0-20170811194829-b4e1701a28ef/go.mod h1:Ct9fl0F
 github.com/karalabe/usb v0.0.0-20190919080040-51dc0efba356/go.mod h1:Od972xHfMJowv7NGVDiWVxk2zxnWgjLlJzE+F4F7AGU=
 github.com/karalabe/usb v0.0.2 h1:M6QQBNxF+CQ8OFvxrT90BA0qBOXymndZnk5q235mFc4=
 github.com/karalabe/usb v0.0.2/go.mod h1:Od972xHfMJowv7NGVDiWVxk2zxnWgjLlJzE+F4F7AGU=
-github.com/karalabe/xgo v0.0.0-20191115072854-c5ccff8648a7 h1:AYzjK/SHz6m6mg5iuFwkrAhCc14jvCpW9d6frC9iDPE=
-github.com/karalabe/xgo v0.0.0-20191115072854-c5ccff8648a7/go.mod h1:iYGcTYIPUvEWhFo6aKUuLchs+AV4ssYdyuBbQJZGcBk=
 github.com/kisielk/errcheck v1.2.0/go.mod h1:/BMXB+zMLi60iA8Vv6Ksmxu/1UDYcXs4uQLJ+jE2L00=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=

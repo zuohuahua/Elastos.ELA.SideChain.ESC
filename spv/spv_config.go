@@ -25,7 +25,8 @@ type PreferParams struct {
 }
 
 func init() {
-	PreferConfig = PreferParams{Config: config.Configuration{MaxLogsSize: 0, MaxPerLogSize: 0, PrintLevel: 1}}
+	//todo PrintLevel need change to 1,now is test
+	PreferConfig = PreferParams{Config: config.Configuration{MaxLogsSize: 0, MaxPerLogSize: 0, PrintLevel: 0}}
 	file, err := ioutil.ReadFile(DefaultConfigFilename)
 	if err != nil {
 		log.Warn("Read Spv_config file  error", "error", err)
