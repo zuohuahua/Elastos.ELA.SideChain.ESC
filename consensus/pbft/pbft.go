@@ -558,14 +558,17 @@ func (p *Pbft) Seal(chain consensus.ChainReader, block *types.Block, results cha
 	case <-p.unConfirmCh:
 		log.Warn("proposal is rejected")
 		p.isSealOver = true
+		p.dispatcher.CleanProposals(true)
 		return nil
 	case <-time.After(toleranceDelay):
 		log.Warn("seal time out stop mine")
 		p.isSealOver = true
+		p.dispatcher.CleanProposals(true)
 		return nil
 	case <-stop:
 		log.Warn("pbft seal is stop")
 		p.isSealOver = true
+		p.dispatcher.CleanProposals(true)
 		return nil
 	}
 	finalBlock := block.WithSeal(header)
@@ -608,11 +611,12 @@ func (p *Pbft) onConfirm(confirm *payload.Confirm) error {
 		return errors.New("seal block is over, can't confirm")
 	}
 	if duty {
-		log.Info("on duty, set confirm block")
+		log.Info("on duty, set confirm block 1")
 		curProposal := p.dispatcher.GetProcessingProposal()
 		if curProposal == nil || !curProposal.BlockHash.IsEqual(confirm.Proposal.BlockHash) {
 			return errors.New("is not confirm current proposal")
 		}
+		log.Info("on duty, set confirm block 2")
 		p.confirmCh <- confirm
 	} else {
 		log.Info("not on duty, not broad confirm block")

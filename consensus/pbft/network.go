@@ -671,7 +671,7 @@ func (p *Pbft) OnBlockReceived(id peer.PID, b *dmsg.BlockMsg, confirmed bool) {
 	}
 
 	delay := time.Unix(int64(block.Time()), 0).Sub(p.dispatcher.GetNowTime())
-	log.Info("wait seal time", "delay", delay)
+	log.Info("[OnBlockReceived] wait seal time", "delay", delay)
 	time.Sleep(delay)
 
 	parent := p.chain.GetBlock(block.ParentHash(), block.NumberU64()-1)
